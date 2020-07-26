@@ -1,0 +1,202 @@
+﻿<Window x:Class="Evolution.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Evolution"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Style="{DynamicResource ResourceKey=MyWindow}"
+        Title="Aptus Evolution" Height="750" Width="1250" >
+    <Window.DataContext>
+        <local:EnvironmentViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="MyImage" Grid.Row="0" Grid.Column="0" Grid.RowSpan="6"/>
+        <Menu Grid.Row="0" >
+            <MenuItem Header="Menu">
+                <MenuItem Header="Organism Viewer" Command="{Binding OrganismViewerCommand}" ></MenuItem>
+                <CheckBox Content="Sound" IsChecked="{Binding Sound}"/>
+                <MenuItem Header="About" Command="{Binding AboutCommand}" ></MenuItem>
+                <MenuItem Header="Exit"  Click="Exit_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Border Grid.Row="1" Background="Black">
+            <Label Content="{Binding FramesPerSecond}" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+        </Border>
+        <!-- Evolution screen (Petri Dish) -->
+        <Border Grid.Row="2" Background="Black">
+            <Border Grid.Row="2" x:Name="petridish" Background="Black" BorderBrush="Cyan">
+                <local:EvolutionCanvas  x:Name="canvas">
+                    <Popup Name="ViewHistoryPopup" Placement="Center" IsOpen="{Binding IsExtinct}" Width="{Binding ActualWidth, ElementName=petridish}" Height="{Binding ActualHeight, ElementName=petridish}">
+                        <Border Background="Transparent" BorderBrush="Cyan" BorderThickness="4">
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                        View Evolution video of the longest surviving organism before extinction.
+                                </TextBlock>
+                                <Button Grid.Row="1" Grid.Column="0" Content="View" Margin="5,0,5,5">
+                                    <Button.InputBindings>
+                                        <MouseBinding Gesture="LeftClick" Command="{Binding OrganismViewerCommand}" />
+                                    </Button.InputBindings>
+                                </Button>
+                                <Button Grid.Row="1" Grid.Column="1" Content="Ignore" Margin="5,0,5,5">
+                                    <Button.InputBindings>
+                                        <MouseBinding Gesture="LeftClick" Command="{Binding ResetSimulatorCommand}" />
+                                    </Button.InputBindings>
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </Popup>
+                </local:EvolutionCanvas>
+            </Border>
+        </Border>
+        <Border Grid.Row="3" Background="Black">
+            <Label Content="{Binding State}" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+        </Border>
+        <Border  Grid.Row="4" Margin="10" Padding="0, 0, 5, 0">
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="1.3*"/>
+                </Grid.ColumnDefinitions>
+                <!-- FPS -->
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" Padding="15,15,15,15">
+                    <Grid Margin="0,2,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="Default Food Amt:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBox FontSize="10" x:Name="txtFoodAmtAtStart" Grid.Row="0" Text="{Binding DefaultFoodAmtAtStart, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"  VerticalAlignment="Center"/>
+                        <Label Grid.Row="1" Content="Default Organism Amt:" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBox FontSize="10" x:Name="txtOrganismAmtAtStart" Grid.Row="1" Text="{Binding DefaultOrganismAmtAtStart, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+                <!-- Speed -->
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Padding="15,15,15,15" >
+                    <Grid Margin="0,2,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Food Rate:" Grid.Column="0" Grid.Row="0"  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <Slider Minimum="0" x:Name="sliderFoodRate" Maximum="100" Grid.Column="1" Grid.Row="0"  Value="{Binding FoodRate}" VerticalAlignment="Center"/>
+                        <Label Content="Food Exp: " Grid.Column="0" Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <Slider Minimum="1" x:Name="sliderFoodExpiry" Maximum="120" Grid.Column="1" Grid.Row="1"  Value="{Binding FoodExpiryTime}" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+                <!-- Organism Count -->
+                <Border  Grid.Column="2" BorderBrush="Black" BorderThickness="1" Padding="15,15,15,15">
+                    <Grid Margin="0,2,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="1.7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Life Count: " Grid.Column="0"  Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBox Text="{Binding OrganismCount}" IsEnabled="false" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
+                        <Label Content="Food Count: " Grid.Column="0"  Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBox Text="{Binding FoodCount}" IsEnabled="false" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="3" Padding="15,15,15,15" >
+                    <!-- Most Complex Organism -->
+                    <Grid Margin="0,2,0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Largest Organism Recorded: " Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBox Text="{Binding LargestOrganismSize}" IsEnabled="false" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center"/>
+                        <Label Content="Max Generation Count: " Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBox Text="{Binding HighestGenerationCount}" IsEnabled="false" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Column="4" Padding="15,15,15,15">
+                    <!-- Year -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <CheckBox IsChecked="{Binding AllowMutation}" Content="Allow Mutation" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label FontSize="9" Grid.Column="0" Grid.Row="1" Content="X:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Text="{Binding WorldWidth, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1"  Grid.Row="1" VerticalAlignment="Center" />
+                        <Label FontSize="9" Grid.Column="2"  Grid.Row="1" Content="Y:" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Text="{Binding WorldHeight, UpdateSourceTrigger=PropertyChanged}" Grid.Column="3"  Grid.Row="1" VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+        <Border Grid.Row="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button  Grid.Column="0" Content="Start"  Margin="5,0,5,5" IsEnabled="{Binding StartEnabled}" >
+                    <Button.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding StartSimulatorCommand}" />
+                    </Button.InputBindings>
+                </Button>
+                <Button Grid.Column="1" Content="{Binding PauseContent}" Margin="5,0,5,5" IsEnabled="{Binding PauseEnabled}">
+                    <Button.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding PauseSimulatorCommand}" />
+                    </Button.InputBindings>
+                </Button>
+                <Button Grid.Column="2" Content="{Binding FastForwardContent}" Margin="5,0,5,5" IsEnabled="{Binding FastForwardEnabled}">
+                    <Button.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding FastForwardSimulatorCommand}" />
+                    </Button.InputBindings>
+                </Button>
+                <Button Grid.Column="3" Content="Reset" Margin="5,0,5,5" IsEnabled="{Binding ResetEnabled}">
+                    <Button.InputBindings>
+                        <MouseBinding Gesture="LeftClick" Command="{Binding ResetSimulatorCommand}" />
+                    </Button.InputBindings>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
