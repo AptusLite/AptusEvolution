@@ -1,0 +1,57 @@
+﻿<Window x:Class="Evolution.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Evolution"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Background="Black"
+        Title="Aptus Evolution" Height="1000" Width="900">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" HorizontalAlignment="Center" Margin="20,0,20,20" >
+                <Image x:Name="MyImage"/>
+            </Label>
+            <TextBlock Foreground="White" Grid.Row="2" TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap">
+                License
+                <LineBreak/>
+                Aptus Evolution - An Evolution Simulation<LineBreak/>
+                Copyright(C) 2020 - Brendan Price <LineBreak/>
+                <LineBreak/>
+                This program is free software: you can redistribute it and/or modify<LineBreak/>
+                it under the terms of the GNU General Public License as published by<LineBreak/>
+                the Free Software Foundation, either version 3 of the License, or<LineBreak/>
+                (at your option) any later version.<LineBreak/>
+                <LineBreak/>
+                This program is distributed in the hope that it will be useful,<LineBreak/>
+                but WITHOUT ANY WARRANTY; without even the implied warranty of<LineBreak/>
+                MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the<LineBreak/>
+                GNU General Public License for more details.<LineBreak/>
+                <LineBreak/>
+                ===========================================================
+                <LineBreak/>
+                About Aptus Evolution
+                <LineBreak/>
+                The Aptus evolution program shows a process of evolution via natural selection.<LineBreak/>
+                <LineBreak/>
+                It is governed by the following rules, and these rules only: <LineBreak/>
+                # Food 'red' falls randomly, and each food item 'eaten' gives 6 energy points to the organism<LineBreak/>
+                # Initially, Single-cell'd organisms are created<LineBreak/>
+                ##They have, by default, a movement direction.<LineBreak/>
+                ##For an organism to replicate, it must meet a certain energy threshold.<LineBreak/>
+                ## The energy threshold required for an organism to replicate is calculated by its size (measured in cells) x 10 energy points<LineBreak/> 
+                ##There is a 1-3% chance of a mistake occurring during replication<LineBreak/>
+                ##Mutations affect the genetic code of an organism, governing structure, movement, and speed<LineBreak/>
+                # When a collision occurs between 2 organisms, force is used to determine the winner<LineBreak/>
+                ## Force is calculated as 'amount of cells' x 'speed', the organism with the greatest force kills the other organism, in which that killed organism now appears as 'red food'<LineBreak/>
+                <LineBreak/>
+                That is the rules, everything is governed by them.
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>
