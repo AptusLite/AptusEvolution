@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>aptusevoIcon.ico</ApplicationIcon>
     <AssemblyName>AptusEvolution</AssemblyName>
@@ -10,12 +10,14 @@
     <Company>aptuslite</Company>
     <Authors>Brendan Price</Authors>
     <PackageLicenseFile>gpl-3.0.txt</PackageLicenseFile>
-    <PackageIcon>aptusevoIcon.ico</PackageIcon>
+    <PackageIcon>aptusevoIcon.png</PackageIcon>
     <PackageReleaseNotes>AptusEvolution - An Evolution Simulation</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
     <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.1.0</Version>
+    <PackageProjectUrl>https://github.com/AptusLite/AptusEvolution</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -53,7 +55,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="aptusevoIcon.ico">
+    <None Include="aptusevoIcon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

@@ -15,25 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0EC79F934A9D40438922EED02D554B50"
+        "MsmKey" = "8:_032E90214D404DCE9FC4D25F2D36CAD2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_11F6ED386258462598A92D8CAFEECF11"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3D1B6BDD56A34BCFA75D4E9994942A4D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_441B96D9C0854BF997AE26521E7B6823"
+        "MsmKey" = "8:_422E0747C1874B28A2A8D1ED424E15F1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -45,32 +33,32 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8718D79930094305904C37232EEAF9B5"
+        "MsmKey" = "8:_5D4252F7EDFC4040B9A8743B9B7DCBF2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_AAC22E2D4A494160A3EC198BFE6E1165"
+        "MsmKey" = "8:_6E688C963BBC4C80A287D31AE6623776"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DA4E2FB7DBE14338BD018FB4A22D47B3"
+        "MsmKey" = "8:_9F421BBCB8BC44459E05DABDC7166221"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_F34CBE3B3AB449D498379FD8FE7276C0"
+        "MsmKey" = "8:_B22247DC763E41D0A35D4517DBF694A1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AAC22E2D4A494160A3EC198BFE6E1165"
+        "OwnerKey" = "8:_5D4252F7EDFC4040B9A8743B9B7DCBF2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -98,6 +86,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -152,7 +148,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.7.2"
+                "FrameworkVersion" = "8:ANY"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=863262"
                 }
@@ -164,55 +160,15 @@
                 "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
                 "IsNETCore" = "11:TRUE"
                 "Architecture" = "2:0"
-                "Runtime" = "2:0"
+                "Runtime" = "2:1"
                 }
             }
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0EC79F934A9D40438922EED02D554B50"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_032E90214D404DCE9FC4D25F2D36CAD2"
             {
-            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\netcoreapp3.1\\AptusEvolution.dll.config"
-            "TargetName" = "8:AptusEvolution.dll.config"
-            "Tag" = "8:"
-            "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_11F6ED386258462598A92D8CAFEECF11"
-            {
-            "SourcePath" = "8:..\\AptusEvolution\\gpl-3.0.rtf"
-            "TargetName" = "8:gpl-3.0.rtf"
-            "Tag" = "8:"
-            "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3D1B6BDD56A34BCFA75D4E9994942A4D"
-            {
-            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\netcoreapp3.1\\AptusEvolution.exe"
+            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\net5.0-windows\\AptusEvolution.exe"
             "TargetName" = "8:AptusEvolution.exe"
             "Tag" = "8:"
             "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
@@ -230,10 +186,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_441B96D9C0854BF997AE26521E7B6823"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_422E0747C1874B28A2A8D1ED424E15F1"
             {
-            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\netcoreapp3.1\\AptusEvolution.deps.json"
-            "TargetName" = "8:AptusEvolution.deps.json"
+            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\net5.0-windows\\AptusEvolution.dll.config"
+            "TargetName" = "8:AptusEvolution.dll.config"
             "Tag" = "8:"
             "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
             "Condition" = "8:"
@@ -270,20 +226,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AAC22E2D4A494160A3EC198BFE6E1165"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5D4252F7EDFC4040B9A8743B9B7DCBF2"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:AptusEvolution, Version=1.0.0.1, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
-                    "_AAC22E2D4A494160A3EC198BFE6E1165"
+                    "_5D4252F7EDFC4040B9A8743B9B7DCBF2"
                     {
                     "Name" = "8:AptusEvolution.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\netcoreapp3.1\\AptusEvolution.dll"
+            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\net5.0-windows\\AptusEvolution.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
@@ -301,9 +257,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DA4E2FB7DBE14338BD018FB4A22D47B3"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6E688C963BBC4C80A287D31AE6623776"
             {
-            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\netcoreapp3.1\\AptusEvolution.runtimeconfig.json"
+            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\net5.0-windows\\AptusEvolution.runtimeconfig.json"
             "TargetName" = "8:AptusEvolution.runtimeconfig.json"
             "Tag" = "8:"
             "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
@@ -321,10 +277,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F34CBE3B3AB449D498379FD8FE7276C0"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B22247DC763E41D0A35D4517DBF694A1"
             {
-            "SourcePath" = "8:..\\AptusEvolution\\bin\\Release\\netcoreapp3.1\\AptusEvolution.runtimeconfig.dev.json"
-            "TargetName" = "8:AptusEvolution.runtimeconfig.dev.json"
+            "SourcePath" = "8:..\\AptusEvolution\\gpl-3.0.rtf"
+            "TargetName" = "8:gpl-3.0.rtf"
             "Tag" = "8:"
             "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
             "Condition" = "8:"
@@ -397,15 +353,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Aptus Evolution"
-        "ProductCode" = "8:{4BF7715F-1DCE-46F1-97D2-9E017B94B264}"
-        "PackageCode" = "8:{D4DC8C28-77A3-4433-A9B2-BDD7BC81152B}"
+        "ProductCode" = "8:{C849A774-204C-4FC3-A505-1C00DA780D11}"
+        "PackageCode" = "8:{C6B08518-88D5-422B-81B0-23C6AC611C00}"
         "UpgradeCode" = "8:{D16C8502-7767-44EA-BFB6-52B5828D381C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.0.1"
         "Manufacturer" = "8:aptuslite"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:https://github.com/AptusLite/AptusEvolution"
@@ -518,7 +474,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_2F7F0D6B08514A6FB7ED5C3BBFD43DD3"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_071E2CF3F24A45C0873D18695B282CDF"
             {
             "Name" = "8:Aptus Evolution"
             "Arguments" = "8:"
@@ -526,13 +482,27 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_3D1B6BDD56A34BCFA75D4E9994942A4D"
+            "Target" = "8:_032E90214D404DCE9FC4D25F2D36CAD2"
+            "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
+            "WorkingFolder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
+            "Icon" = "8:_51BCC043DCBB4D18B5BAB8B176BF0FB4"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_92FB84FA92C945C79AE7BA14B243858D"
+            {
+            "Name" = "8:Aptus Evolution"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_032E90214D404DCE9FC4D25F2D36CAD2"
             "Folder" = "8:_246A7B789897457FB93D5D4EC72DC4B8"
             "WorkingFolder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
             "Icon" = "8:_51BCC043DCBB4D18B5BAB8B176BF0FB4"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B40389BA812549FCB7AE792E12DFA7E6"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9CB3FA5E75874DEE8E6501FF1EE8CA26"
             {
             "Name" = "8:Aptus Evolution"
             "Arguments" = "8:"
@@ -540,7 +510,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_3D1B6BDD56A34BCFA75D4E9994942A4D"
+            "Target" = "8:_032E90214D404DCE9FC4D25F2D36CAD2"
             "Folder" = "8:_ACBFCBA5BBB8408EBB19B56AF3AEB6EE"
             "WorkingFolder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
             "Icon" = "8:_51BCC043DCBB4D18B5BAB8B176BF0FB4"
@@ -677,7 +647,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:_11F6ED386258462598A92D8CAFEECF11"
+                            "Value" = "8:_B22247DC763E41D0A35D4517DBF694A1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Sunken"
@@ -871,7 +841,7 @@
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
                             "Setting" = "3:2"
-                            "Value" = "8:_11F6ED386258462598A92D8CAFEECF11"
+                            "Value" = "8:_B22247DC763E41D0A35D4517DBF694A1"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Sunken"
@@ -1039,9 +1009,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8718D79930094305904C37232EEAF9B5"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_9F421BBCB8BC44459E05DABDC7166221"
             {
-            "SourcePath" = "8:..\\AptusEvolution\\obj\\Release\\netcoreapp3.1\\AptusEvolution.dll"
+            "SourcePath" = "8:..\\AptusEvolution\\obj\\Release\\net5.0-windows\\AptusEvolution.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_8A0B79FBD7604E30BC502F454092EEF1"
