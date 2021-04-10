@@ -20,3 +20,10 @@ That is the rules, everything is governed by them.
 
 Please See video of Aptus Evolution:
 https://youtu.be/2Yu4BVcjoro
+
+For Developers:
+ - AptusEvolution proj contains the source code
+ - AptusEvolutionInstaller proj contains the installation code
+ 
+ Other
+  - AptusEvolutionInstallationFiles contains the Windows Installer file to install the program to your PC.
